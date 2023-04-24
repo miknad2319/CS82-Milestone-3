@@ -9,10 +9,10 @@ from transformers import AutoTokenizer,AutoModel
 import random
 from bs4 import BeautifulSoup
 import re
-from nltk.corpus import stopwords
-from nltk.stem import WordNetLemmatizer
-import nltk.data
-import nltk
+# from nltk.corpus import stopwords
+# from nltk.stem import WordNetLemmatizer
+# import nltk.data
+# import nltk
 
 from transformers import AutoModelForSequenceClassification
 import pytorch_lightning as pl
@@ -186,7 +186,7 @@ model.load_state_dict(torch.load("model_state_dict.pt"))
 model.eval()
 
 # lemmatizing tool
-lemmatizer = WordNetLemmatizer()
+# lemmatizer = WordNetLemmatizer()
 
 def prepare_tokenized_review(raw_review):
   # Remove HTML tags with BS
@@ -199,10 +199,10 @@ def prepare_tokenized_review(raw_review):
 #   stops = set(stopwords.words("english"))
 #   words = [w for w in words if not w in stops]
   # Lemmatize the word list
-  lemmatized = []
-  for word in words:
-    lemmatized.append(lemmatizer.lemmatize(word))
-  return " ".join(lemmatized)
+  # lemmatized = []
+  # for word in words:
+  #   lemmatized.append(lemmatizer.lemmatize(word))
+  return " ".join(words)
 
 def get_encodings(text):
     MAX_LEN=256
