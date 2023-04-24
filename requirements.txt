@@ -2,5 +2,5 @@ torch
 streamlit
 transformers
 bs4
-pandas
+pytorch-lightning
 numpy
